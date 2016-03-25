@@ -1,3 +1,4 @@
+<%= content_tag :h1, "Car models from #{@manufacturer.name}" %>
 <%= link_to '<< Voltar', :back %>
 <ul>
   <%= render :partial => @manufacturer.models %>
