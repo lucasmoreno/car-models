@@ -1,14 +1,7 @@
-<% manufacturers = Manufacturer.all %>
-
-<form action="/models" method="GET">
-  <p>
-    <label>Escolha a Fabricante:</label>
-    <select name="webmotors_manufacturer_id">
-      <% manufacturers.each do |manufacturer| %>
-        <option value="<%= manufacturer.webmotors_id %>"><%= manufacturer.name %></option>
-      <% end %>
-    </select>
-  </p>
-
-  <input type="submit" value="Buscar modelos">
-</form>
+<%= form_tag :models, method: :get do %>
+  <%= content_tag :p do %>
+    <%= label_tag 'manufacturer_id', 'Escolha a Fabricante:' %>
+    <%= select_tag 'manufacturer_id', options_from_collection_for_select(@manufacturers, :id, :name) %>
+  <% end %>
+  <%= submit_tag 'Buscar modelos' %>
+<% end %>

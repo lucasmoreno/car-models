@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @manufacturers = Manufacturer.all
     #search the manufacturer
     uri = URI("http://www.webmotors.com.br/carro/marcas")
 
