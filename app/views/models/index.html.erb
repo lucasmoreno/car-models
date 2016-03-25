@@ -1,9 +1,4 @@
-<% manufacturer = Manufacturer.where(webmotors_id: params[:webmotors_manufacturer_id])[0] %>
-<% models = Model.where(manufacturer_id: manufacturer.id) %>
-
-<a href="/"><< Voltar</a>
+<%= link_to '<< Voltar', :back %>
 <ul>
-  <% models.each do |model| %>
-    <li><%= model.name %></li>
-  <% end %>
+  <%= render :partial => @manufacturer.models %>
 </ul>
