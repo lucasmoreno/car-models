@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  sequence :name do |n|
+  sequence :manufacturer_name do |n|
     "manufacturer #{n}"
   end
 
@@ -8,7 +8,7 @@ FactoryGirl.define do
   end
 
   factory :manufacturer do
-    name
+    name { generate :manufacturer_name }
     webmotors_id
   end
 end
